@@ -42,7 +42,7 @@ li {text-decoration: none;;}
 
 .search-input-container > i {float: right; background-color: transparent;padding:8px;margin-top: -41px;z-index: 50;position: relative;padding-right: 20px;}
 
-
+.search-input-container > input:focus {outline: none;}
 
 .search-wrapper {position: sticky;top: 10px;left: 0px;;}
 

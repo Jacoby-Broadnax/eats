@@ -48,9 +48,9 @@ li {text-decoration: none;;}
 
 .search-wrapper {position: sticky;top: 10px;left: 0px;;}
 
-#searchinput.ol {margin-bottom: 0px;padding-bottom: 30px;;-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.42);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.42);
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.42);padding-top: 0px; padding-bottom: 0px;margin-top: 0px;border-radius: 50px;}
+#searchinput.ol {margin-bottom: 0px;padding-bottom: 30px;;-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.22);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.22);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.22);padding-top: 0px; padding-bottom: 0px;margin-top: 0px;border-radius: 50px;}
 
 #searchwrap.nt {margin:auto;margin-top: -60px;background-color: lightgray;padding-top: 50;padding-bottom: 0px;background-color: transparent;width: 324px;}
 /*------------------------------------------Food Item--------------------------------*/
@@ -58,7 +58,7 @@ li {text-decoration: none;;}
 
 
 
-.result-list {margin: 0px;padding: 0px;padding-bottom: 50px;}
+.result-list {margin: 0px;padding: 0px;padding-bottom: 50px;margin-top: 260px;}
 
 li {margin: 0px;padding: 0px;list-style-type: none;}
 

@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
         <meta name="theme-color" content="#ffffff"/>
         <meta name="description" content="
-        Stega one place for all of your food. Search DoorDash, Uber Eats, and more for the best delivery prices. ">
+        Stega one place for all your food. Search DoorDash, Uber Eats, and more for the best delivery prices. ">
         <link href="https://cdn.rawgit.com/mladenplavsic/css-ripple-effect/35c35541/dist/ripple.min.css" rel="stylesheet"/>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
@@ -26,7 +26,7 @@
             <div class="food-item">
                  {{#each this}}
                  <li>
-                <a href="{{link}}" target="_blank">
+                <a href="#" onclick="console.log('{{name}}')">
                  <div class="food-item">
                      <img loading = "lazy" src="{{imagelink}}">
                      <div class="food-text-container">
@@ -46,14 +46,14 @@
 
         if ("serviceWorker" in navigator) {
           if (navigator.serviceWorker.controller) {
-            console.log("[PWA Builder] active service worker found, no need to register");
+            console.log("active service worker found, no need to register");
           } else {
             navigator.serviceWorker
               .register("pwabuilder-sw.js", {
                 scope: "/index.html"
               })
               .then(function (reg) {
-                console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+                console.log("Service worker has been registered for scope: " + reg.scope);
               });
           }
         }
@@ -61,21 +61,21 @@
         </script>
     </head>
 <body>
-    <header>
-      <img src="/images/dairy queen.svg">  
+    <header id="header">
+      <img id="img" src="/images/dairy queen.svg">  
         <div class="location-indicator">
             <i class="material-icons">location_on</i>
             <h5  id="location-indicator">Pre Alpha 1.2</h5>
         </div>
         <div class="logo-container">
-            <img src="/Branding/stega full length white.svg">
+            <img id="logo" src="/Branding/stega full length white.svg">
         </div>
         <form action="#items">
-        <div class="search-wrapper">
-            <div class="search-input-container" id="search-container"> <input autocomplete="off" class="search-input"
+        <div class="search-wrapper" id="searchwrap">
+            <div id="searchinput" class="search-input-container" id="search-container"> <input autocomplete="off" class="search-input"
                     type="search" id="mySearch" onkeyup="myFunction()" placeholder="Search..."
-                    title="Click To Search For Food"><button type="submit"><i onclick="search()"
-                        class="material-icons search-icon">search</i></button>
+                    title="Click To Search For Food"><i onclick="search()"
+                        class="material-icons search-icon">search</i>
             </div>
 
         </div>
@@ -84,9 +84,29 @@
             $(window).scroll(function () {
               var scroll = $(window).scrollTop();
               if (scroll > 0) {
-                $("#search-container").addClass("on");
+                $("#header").addClass("go");
               } else {
-                $("#search-container").removeClass("on");
+                $("#header").removeClass("go");
+              }
+              if (scroll > 0) {
+                $("#img").addClass("no");
+              } else {
+                $("#img").removeClass("no");
+              }
+              if (scroll > 0) {
+                $("#logo").addClass("er");
+              } else {
+                $("#logo").removeClass("er");
+              }
+              if (scroll > 0) {
+                $("#searchwrap").addClass("nt");
+              } else {
+                $("#searchwrap").removeClass("nt");
+              }
+              if (scroll > 0) {
+                $("#searchinput").addClass("ol");
+              } else {
+                $("#searchinput").removeClass("ol");
               }
             });
           </script>

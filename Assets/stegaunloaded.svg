@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="170" height="94" viewBox="0 0 170 94">
+  <defs>
+    <clipPath id="clip-stegaunloaded">
+      <rect width="170" height="94"/>
+    </clipPath>
+  </defs>
+  <g id="stegaunloaded" clip-path="url(#clip-stegaunloaded)">
+    <rect width="170" height="94" fill="#e6e6e6"/>
+    <g id="fastfood-24px_2_" data-name="fastfood-24px (2)" transform="translate(39.886 36)">
+      <path id="Path_50" data-name="Path 50" d="M16.008,20.345h1.46A1.454,1.454,0,0,0,18.9,19.061l1.452-14.5h-4.4V1H14.222V4.563H9.85l.264,2.059A9.018,9.018,0,0,1,13.871,8.61a6.062,6.062,0,0,1,2.138,4.654v7.082ZM1,19.466v-.871H14.222v.871a.884.884,0,0,1-.889.88H1.889A.884.884,0,0,1,1,19.466Zm13.222-6.158C14.222,6.27,1,6.27,1,13.307Zm-13.2,1.768h13.2v1.759H1.018Z" transform="translate(-0.12 -0.12)"/>
+      <path id="Path_51" data-name="Path 51" d="M0,0H21.114V21.114H0Z" fill="none"/>
+    </g>
+    <text id="STEGA" transform="translate(66 33)" font-size="20" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="22">STEGA</tspan></text>
+  </g>
+</svg>

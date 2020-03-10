@@ -10,6 +10,7 @@
         <meta name="theme-color" content="#ffffff"/>
         <meta name="description" content="
         Stega one place for all your food. Search DoorDash, Uber Eats, and more for the best delivery prices. ">
+        <link rel="stylesheet" href="/vivify.min.css">
         <link href="https://cdn.rawgit.com/mladenplavsic/css-ripple-effect/35c35541/dist/ripple.min.css" rel="stylesheet"/>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
@@ -26,7 +27,7 @@
             <div class="food-item">
                  {{#each this}}
                  <li>
-                <a href="#" onclick="console.log('{{name}}')">
+                <a href="#popup" onclick="document.getElementById('icon').src='/Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';">
                  <div class="food-item">
                      <img loading = "lazy" src="{{imagelink}}">
                      <div class="food-text-container">
@@ -62,10 +63,10 @@
     </head>
 <body>
     <header id="header">
-      <img id="img" src="/images/dairy queen.svg">  
+      <img class="" id="img" src="/images/dairy queen.svg">  
         <div class="location-indicator">
             <i class="material-icons">location_on</i>
-            <h5  id="location-indicator">Pre Alpha 1.2</h5>
+            <h5  id="location-indicator">Pre Alpha 1.5</h5>
         </div>
         <div class="logo-container">
             <img id="logo" src="/Branding/stega full length white.svg">
@@ -132,6 +133,27 @@
             document.getElementsByClassName("result-list")[0].style.display = "block";
         }
     </script>
+<!-------------------------Pop In Menu--------------------------------->
+
+<div class="popin-container vivify fadeIn" id="popup"  >
+  <div  class="close-btn"><button onclick="window.history.back();"></button></div>
+<div class="popin vivify fadeInBottom" >
+  <div class="pop-image">
+    <img id="imagefood" src="">
+  </div>
+  <div class="sub-pop">
+  <div class="pop-logo-container">
+    <img id="icon" src="assets/Uber Eats.svg">
+  <p>Delivery <span id="deliveryPrice">$4.99</span></p>
+  </div>
+  <div class="navigation-buttons">
+    <a href=""><button>Save For Later</button></a>
+    <a href="" class="color"><button >Start Order</button></a>
+  </div>
+  <p>Delivery fee may be subject to change by delivery service</p>
+</div>
+</div>
+</div>
 
 <!------------------------Food Container-------------------->
 

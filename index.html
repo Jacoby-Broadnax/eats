@@ -27,7 +27,7 @@
             <div class="food-item">
                  {{#each this}}
                  <li>
-                <a href="#popup" onclick="document.getElementById('icon').src='/Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';">
+                <a href="#popup" onclick="document.getElementById('icon').src='/Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';document.getElementById('extlink').href='{{link}}';">
                  <div class="food-item">
                      <img loading = "lazy" src="{{imagelink}}">
                      <div class="food-text-container">
@@ -147,8 +147,8 @@
   <p>Delivery <span id="deliveryPrice">$4.99</span></p>
   </div>
   <div class="navigation-buttons">
-    <a href=""><button>Save For Later</button></a>
-    <a href="" class="color"><button >Start Order</button></a>
+    <a  href=""><button>Save For Later</button></a>
+    <a id="extlink" href="" class="color" target="_blank"><button >Start Order</button></a>
   </div>
   <p>Delivery fee may be subject to change by delivery service</p>
 </div>

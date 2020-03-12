@@ -37,7 +37,7 @@ li {text-decoration: none;;}
 /*-----------------------------------------Pop In-----------------------------------*/
 
 .popin-container{position: fixed; top: 0px; width: 100%; height: 100vh;z-index: 550;background-color: rgba(0, 0, 0, 0.507);animation-duration: 20ms;}
-.popin {position: fixed;bottom: 0px; background-color: white;width: 100%;}
+.popin {position: fixed;bottom: 0px; background-color: white;width: 100%;animation-duration: 300ms !important;opacity:1 !important;}
 .sub-pop {vertical-align: top;margin: auto; width: 93%;}
 .close-btn > button {position: fixed; width: 100%; left: 0px; top: 0px; height: 70vh;;z-index: 600;border: none; background-color: transparent;}
 .pop-logo-container > p {font-size: 14px; font-weight: normal;margin-top: 0px; padding-top: 0px;text-align: center;}

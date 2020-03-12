@@ -43,6 +43,35 @@
         {{/each}}
      </div>
     </script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+          $.getJSON('https://v2-api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/stega/sheet1', function (data) {
+              var template = Handlebars.compile($('#item-template2').html())
+              $('#foodsaved').html(template(data.sheet1))
+          })
+      })
+  </script>
+
+  <script id="item-template2" type="text/x-handlebars-template">
+      <div class="food-item">
+           {{#each this}}
+           <li>
+          <a href="#popup" onclick="document.getElementById('icon').src='/Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';document.getElementById('extlink').href='{{link}}';">
+           <div class="food-item">
+               <img loading = "lazy" src="{{imagelink}}">
+               <div class="food-text-container">
+               <img loading = "lazy" src="/Assets/{{service}}.svg">
+                   <h3>{{name}}</h3>
+                   <h4><span>${{deliveryPrice}}</span></h4>
+               <p style="display: none;">{{category}}</p>
+               </div>
+                   </div>
+                 
+                  </a>
+                  </li>
+  {{/each}}
+</div>
+</script>
     <script >
 
         if ("serviceWorker" in navigator) {
@@ -172,6 +201,12 @@
     </div> 
 </ul>
 </section>
+
+<!-----------------------------Saved---------------------------->
+<div class="saved-container">
+  <h1>Saved</h1>
+<div id="foodsaved"></div>
+</div>
 
       <!----------------Bottom-Navigation-------------->
       <div class="bottom-navigation">

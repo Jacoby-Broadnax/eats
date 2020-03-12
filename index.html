@@ -62,6 +62,7 @@
         </script>
     </head>
 <body>
+
     <header id="header">
       <img class="" id="img" src="/images/dairy queen.svg">  
         <div class="location-indicator">
@@ -72,7 +73,7 @@
             <img id="logo" src="/Branding/stega full length white.svg">
         </div>
         <form action="#items">
-        <div class="search-wrapper" id="searchwrap">
+        <div class="search-wrapper" id="searchwrap" onclick="scrollWin()">
             <div id="searchinput" class="search-input-container" id="search-container"> <input autocomplete="off" class="search-input"
                     type="search" id="mySearch" onkeyup="myFunction()" placeholder="Search..."
                     title="Click To Search For Food"><i onclick="search()"
@@ -81,6 +82,11 @@
 
         </div>
     </form>
+    <script>
+      function scrollWin() {
+  window.scrollTo(0, 187);
+}
+    </script>
         <script>
             $(window).scroll(function () {
               var scroll = $(window).scrollTop();
@@ -112,6 +118,7 @@
             });
           </script>
     </header>
+ 
     <script>
         function myFunction() {
             var e, s, t;

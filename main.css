@@ -91,7 +91,7 @@ li {text-decoration: none;;}
 
 
 
-.result-list {margin: 0px;padding: 0px;padding-bottom: 50px;margin-top: 68px;background-color: white; padding-top: 50px;}
+.result-list {margin: 0px;padding: 0px;padding-bottom: 50px;margin-top: 72px;background-color: white; padding-top: 50px;}
 
 li {margin: 0px;padding: 0px;list-style-type: none;}
 
@@ -99,7 +99,7 @@ li {margin: 0px;padding: 0px;list-style-type: none;}
 
 .food-item:first-of-type {margin-top: 17px;;}
 
-.food-item> img{width: 48%;height: 94px;border-radius: 8px;object-fit: cover;display: inline-block;background-image: url(/Assets/stegaunloaded.svg);}
+.food-item> img{width: 48%;height: 94px;object-fit: cover;display: inline-block;background-image: url(/Assets/stegaunloaded.svg);}
 
 .food-text-container {width: 50%;display: inline-block;float: right;color: black;}
 

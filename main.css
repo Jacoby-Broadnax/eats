@@ -83,7 +83,7 @@ li {text-decoration: none;;}
 
 .nav-item > input {padding-bottom: 12px;display: none;}
 
-.nav-item > label > p {padding-bottom: 15px;margin-top: 0px;margin-bottom: 0px;color: rgb(92, 92, 92);}
+.nav-item > label > p {padding-bottom: 15px;margin-top: 0px;margin-bottom: 0px;color: rgb(92, 92, 92);transition: 0.2s ease;}
 
 .nav-item {display: inline-block;margin-left: 12px;}
 /*------------------------------------------Food Item--------------------------------*/

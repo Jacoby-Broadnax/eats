@@ -1,23 +1,23 @@
 {
-    "short_name": "Stega",
-    "name": "Stega",
-    "icons": [
-        {
-            "src": "Branding/decklogo192px.png",
-            "type": "image/png",
-            "sizes": "192x192",
-            "purpose": "maskable"
-    }
-        , {
-            "src": "Branding/decklogo512.png",
-            "type": "image/png",
-            "sizes": "512x512",
-            "purpose": "maskable"
+  "short_name": "Food Scout",
+  "name": "Food Scout",
+  "icons": [
+    {
+      "src": "Branding/192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "Branding/512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
-    "start_url": "index.html",
-    "background_color": "#ffffff",
-    "display": "standalone",
-    "scope": "/index.html",
-    "theme_color": "#ffffff"
+  "start_url": "index.html",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/index.html",
+  "theme_color": "#ffffff"
 }

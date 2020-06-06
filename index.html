@@ -56,7 +56,7 @@
       <div class="food-item">
            {{#each this}}
            <li>
-          <a href="#popup" onclick="document.getElementById('icon').src='/Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';document.getElementById('extlink').href='{{link}}';">
+          <a  href="#popup" onclick="document.getElementById('icon').src='/Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';document.getElementById('extlink').href='{{link}}';var currentItem = 'MS{{id}}';console.log(currentItem)">
            <div class="food-item">
                <img loading = "lazy" src="{{imagelink}}">
                <div class="food-text-container">
@@ -93,15 +93,35 @@
 <body>
 
     <header id="header">
-      <img class="" id="img" src="/images/dairy queen.svg">  
-        <div class="location-indicator">
-            <i class="material-icons">location_on</i>
-            <h5  id="location-indicator">Pre Alpha 1.6</h5>
-        </div>
+  <div class="location-wrapper">
+    <div class="location-indicator">
+      <i class="material-icons">location_on</i>
+      <h5  id="location-indicator">Pre Alpha 1.6</h5>
+  </div>
+  </div>
+      
         <div class="logo-container">
-            <img id="logo" src="/Branding/stega full length white.svg">
+            <img id="logo" src="/Branding/foodscout logo.svg">
         </div>
-        <form action="#items">
+      
+          <ul class="nav-menu">
+           <div class="nav-item">
+            <input id="menu1" type="radio" name="bottom-nav" checked>
+            <label for="menu1"><p>Your Feed</p></label>
+           </div>
+      
+           <div class="nav-item">
+            <input id="menu2" type="radio" name="bottom-nav" >
+            <label for="menu2"><p>Free Delivery</p></label>
+           </div>
+        <div class="nav-item">
+          <input id="menu3" type="radio" name="bottom-nav" >
+          <label for="menu3"><p>Categories</p></label>
+        </div>
+      
+          </ul>
+    
+        <form action="#items" id="search-form">
         <div class="search-wrapper" id="searchwrap" onclick="scrollWin()">
             <div id="searchinput" class="search-input-container" id="search-container"> <input autocomplete="off" class="search-input"
                     type="search" id="mySearch" onkeyup="myFunction()" placeholder="Search..."
@@ -116,36 +136,7 @@
   window.scrollTo(0, 187);
 }
     </script>
-        <script>
-            $(window).scroll(function () {
-              var scroll = $(window).scrollTop();
-              if (scroll > 0) {
-                $("#header").addClass("go");
-              } else {
-                $("#header").removeClass("go");
-              }
-              if (scroll > 0) {
-                $("#img").addClass("no");
-              } else {
-                $("#img").removeClass("no");
-              }
-              if (scroll > 0) {
-                $("#logo").addClass("er");
-              } else {
-                $("#logo").removeClass("er");
-              }
-              if (scroll > 0) {
-                $("#searchwrap").addClass("nt");
-              } else {
-                $("#searchwrap").removeClass("nt");
-              }
-              if (scroll > 0) {
-                $("#searchinput").addClass("ol");
-              } else {
-                $("#searchinput").removeClass("ol");
-              }
-            });
-          </script>
+   
     </header>
  
     <script>
@@ -169,6 +160,27 @@
             document.getElementsByClassName("result-list")[0].style.display = "block";
         }
     </script>
+
+<!------------------------Food Container-------------------->
+
+<section class="food-container">
+    <ul id="myMenu" class="result-list">
+    <div id="food">
+        <div class="loader-container"> <img class="loader" src="https://assets.materialup.com/uploads/1b49dbf6-f73b-4cbb-afb9-b4174ad6b7bd/preview.gif"></div>
+   
+    </div> 
+</ul>
+</section>
+
+
+
+
+<!-----------------------------Saved-------
+<div class="saved-container">
+  <h1>Saved</h1>
+<div id="foodsaved"></div>
+</div>
+--------------------->
 <!-------------------------Pop In Menu--------------------------------->
 
 <div class="popin-container vivify fadeIn duration-200" id="popup"  >
@@ -183,29 +195,12 @@
   <p>Delivery <span id="deliveryPrice">$4.99</span></p>
   </div>
   <div class="navigation-buttons">
-    <a  href=""><button>Save For Later</button></a>
+    <a  href="#" onclick="console.log(currentItem)"><button>Save For Later</button></a>
     <a id="extlink" href="" class="color" target="_blank"><button >Start Order</button></a>
   </div>
   <p>Delivery fee may be subject to change by delivery service</p>
 </div>
 </div>
-</div>
-
-<!------------------------Food Container-------------------->
-
-<section class="food-container">
-    <ul id="myMenu" class="result-list">
-    <div id="food">
-        <div class="loader-container"> <img class="loader" src="https://assets.materialup.com/uploads/1b49dbf6-f73b-4cbb-afb9-b4174ad6b7bd/preview.gif"></div>
-   
-    </div> 
-</ul>
-</section>
-
-<!-----------------------------Saved---------------------------->
-<div class="saved-container">
-  <h1>Saved</h1>
-<div id="foodsaved"></div>
 </div>
 
       <!----------------Bottom-Navigation-------------->

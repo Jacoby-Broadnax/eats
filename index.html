@@ -55,11 +55,11 @@
   <script id="item-template2" type="text/x-handlebars-template">
       <div class="food-item">
            {{#each this}}
-           <li>
+           <li class="">
           <a  href="#popup" onclick="document.getElementById('icon').src='/Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';document.getElementById('extlink').href='{{link}}';var currentItem = 'MS{{id}}';console.log(currentItem)">
            <div class="food-item">
-               <img loading = "lazy" src="{{imagelink}}">
-               <div class="food-text-container">
+               <img loading = "lazy" src="{{imagelink}}"  >
+               <div class="food-text-container vivify fadeIn delay-100>
                <img loading = "lazy" src="/Assets/{{service}}.svg">
                    <h3>{{name}}</h3>
                    <h4><span>${{deliveryPrice}}</span></h4>

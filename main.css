@@ -59,7 +59,7 @@ li {text-decoration: none;;}
 
 #search-form {}
 
-.search-input-container {width:280px ;padding-bottom: 66px;position: sticky;top: 0px;left: 0px;}
+.search-input-container {width:280px ;padding-bottom: 0px;position: sticky;top: 0px;left: 0px;}
 
 
 
@@ -84,6 +84,7 @@ li {text-decoration: none;;}
 /*-----------------------------------------Nav Menu----------------------------------------------*/
 
 .nav-menu {padding-top: 15px;margin: 0px;margin-left: -34px;}
+.nav-menu {padding-top: 16px;margin: 0px;margin-left: -34px;}
 
 .nav-menu > li {display: inline-block;margin-left: 10px;}
 

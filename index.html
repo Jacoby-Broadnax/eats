@@ -57,7 +57,7 @@
            {{#each this}}
            <li class="">
           <a  href="#popup" onclick="document.getElementById('icon').src='/Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';document.getElementById('extlink').href='{{link}}';var currentItem = 'MS{{id}}';console.log(currentItem)">
-           <div class="food-item">
+           <div class="food-item ">
                <img loading = "lazy" src="{{imagelink}}"  >
                <div class="food-text-container vivify fadeIn delay-100>
                <img loading = "lazy" src="/Assets/{{service}}.svg">
@@ -105,7 +105,7 @@
         </div>
       <form>
           <ul class="nav-menu">
-           <div class="nav-item">
+           <div class="nav-item" >
             <input id="menu1" type="radio" name="bottom-nav" checked>
             <label for="menu1"><p>Your Feed</p></label>
            </div>
@@ -191,7 +191,10 @@
   </div>
   <div class="sub-pop">
   <div class="pop-logo-container">
-    <img id="icon" src="assets/Uber Eats.svg">
+    <div class="pop-logo">
+      <img id="icon" src="assets/Uber Eats.svg">
+    </div>
+   
   <p>Delivery <span id="deliveryPrice">$4.99</span></p>
   </div>
   <div class="navigation-buttons">

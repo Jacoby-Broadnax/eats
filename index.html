@@ -131,7 +131,7 @@
         <form action="#items" id="search-form">
         <div class="search-wrapper" id="searchwrap" onclick="scrollWin()">
             <div id="searchinput" class="search-input-container" id="search-container"> <input autocomplete="off" class="search-input"
-                    type="search" id="mySearch" onkeyup="myFunction()" placeholder="Search..."
+                    type="search" id="mySearch" onkeyup="myFunction()" placeholder="Search and Eat..."
                     title="Click To Search For Food">
             </div>
 
@@ -164,6 +164,7 @@
     <script>
         function search() {
             document.getElementsByClassName("result-list")[0].style.display = "block";
+            document.getElementById("mySearch").focus();
         }
     </script>
 
@@ -219,17 +220,16 @@
                 <input  id="nav-btn1" type="radio" name="bottom-nav">
                 <label for="nav-btn1" ><img  src="/Assets/Saved Filled.svg"></label>
             </div>
-            
-          
+            <a href="#">
                 <div class="bottom-nav-button"
               >
            
                 <input id="nav-btn2" type="radio" name="bottom-nav" checked>
                
                 <label for="nav-btn2"><img src="/Assets/Home Filled.svg"></label>
-            </a>
+           
             </div>
-       
+          </a>
             
 
             <div class="bottom-nav-button" onclick="view()">

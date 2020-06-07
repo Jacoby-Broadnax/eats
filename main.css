@@ -123,9 +123,9 @@ li {margin: 0px;padding: 0px;list-style-type: none;}
 .food-text-container > h4 {font-size: 14px; font-weight: 500; margin-top: 0px;margin-left: 10px;font-weight: normal;}
 .food-text-container > h4 > span {font-weight: 500;}
 
-.loader {width: 100%; object-fit: cover;}
+.loader {width: 100%; object-fit: cover;filter: contrast(1000%),brightness(0);}
 
-.loader-container {margin: auto; width: 200px;margin-top:20vh;}
+.loader-container {margin: auto; width: 200px;margin-top:20vh;filter: grayscale(1.5);}
 
 /*----------------------------------------Bottom Navigation--------------------------*/
 

@@ -71,7 +71,7 @@ li {text-decoration: none;;}
 
 .search-input-container > input:focus {outline: none;}
 
-.search-wrapper {position: fixed;width: 100%;top: 35px;left: 15px;background-color: white;height: 50px;}
+.search-wrapper {position: fixed;width: 100%;top: 32px;left: 15px;background-color: white;height: 50px;}
 
 #searchwrap {display: none;}
 

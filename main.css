@@ -60,8 +60,6 @@ li {text-decoration: none;;}
 
 .input-styling {width: 96%;padding: 0px;height: 36px;padding-left: 10px;margin-top: 10px;margin-bottom: 10px;border-radius: 4px;border: solid 1px lightgray;}
 
-.input-styling:focus {position: fixed; bottom: 20px;width: 100%;left:0px}
-
 .halfed > label {float: left;}
 
 .halfed-input > input {margin-top: 15px;border-radius: 4px;}

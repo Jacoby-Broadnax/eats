@@ -59,7 +59,7 @@
           <a  href="#popup" onclick="document.getElementById('icon').src='/Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';document.getElementById('extlink').href='{{link}}';var currentItem = 'MS{{id}}';console.log(currentItem)">
            <div class="food-item ">
                <img loading = "lazy" src="{{imagelink}}"  >
-               <div class="food-text-container vivify fadeIn delay-100>
+               <div class="food-text-container">
                <img loading = "lazy" src="/Assets/{{service}}.svg">
                    <h3>{{name}}</h3>
                    <h4><span>${{deliveryPrice}}</span></h4>
@@ -217,6 +217,66 @@
   </div>
   <p>Delivery fee may be subject to change by delivery service</p>
 </div>
+</div>
+</div>
+
+<!---------------------------------Sign Up Pop------------------------------->
+
+<div class="popin-container vivify fadeIn duration-200" id="popupSignup"  >
+  <div  class="close-btn" ><button style="height: 200px;" onclick="window.history.back();"></button></div>
+<div class="popin vivify fadeInBottom" >
+
+  <form>
+  <div class="sub-pop">
+
+    <div class="head-text-container">
+      <h2>Welcome</h2>
+    </div>
+
+    <div class="form-styling">
+   
+      <div class="halfed-input">
+      <label>First Name</label>
+      <br>
+      <input class="input-styling" type="text" id="signup-first-name" required>
+      </div>
+
+     
+      <div class="halfed-input">
+        <label>Last Name</label>
+        <br>
+        <input class="input-styling" type="text" id="signup-last-name" required>
+      </div>
+     
+      <label>E-Mail</label>
+      <br>
+      <input class="input-styling" type="email" id="signup-email" required>
+     
+      <label>Your City</label>
+      <select class="input-styling" required>
+        <option disabled>Supported Cities</option>
+        <optgroup label="Mississippi">
+          <option value="volvo">Gulfport</option>
+          <option value="volvo">Long Beach</option>
+        </optgroup>
+       
+       
+      </select>
+      <br>
+
+      <label>Password</label>
+      <br>
+      <input class="input-styling" type="password" id="signup-password" required>
+    </div>
+  <div class="navigation-buttons">
+  
+    <a id="extlink" href="" class="color" target="_blank"><button >Sign Up</button></a>
+  </div>
+  <p>By signing up you agree to our <a href="">Privacy Policy</a>.</p>
+</div>
+</form>
+
+
 </div>
 </div>
 

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Food Scout | Find Food On Uber Eats, Door Dash, and More</title>
+        <link rel="stylesheet" href="main.css">
+        <meta name="language" content="English">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+        <link rel="manifest" href="manifest.json">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
+        <meta name="theme-color" content="#000000"/>
+        <meta name="description" content="
+        Food Scout one place for all your food. Search DoorDash, Uber Eats, and more for the best delivery prices. ">
+        <link rel="stylesheet" href="/vivify.min.css">
+        <link href="https://cdn.rawgit.com/mladenplavsic/css-ripple-effect/35c35541/dist/ripple.min.css" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $.getJSON('https://v2-api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/stega/sheet1', function (data) {
+                    var template = Handlebars.compile($('#item-template').html())
+                    $('#food').html(template(data.sheet1))
+                })
+            })
+        </script>
+    
+        <script id="item-template" type="text/x-handlebars-template">
+            <div class="food-item">
+                 {{#each this}}
+                 <li>
+                <a href="#popup" onclick="document.getElementById('icon').src='/Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';document.getElementById('extlink').href='{{link}}';closeSearch();">
+                 <div class="food-item">
+                     <img loading = "lazy" src="{{imagelink}}">
+                     <div class="food-text-container">
+                     <img loading = "lazy" src="/Assets/{{service}}.svg">
+                         <h3>{{name}}</h3>
+                         <h4><span>${{deliveryPrice}}</span></h4>
+                     <p style="display: none;">{{category}}</p>
+                     </div>
+                         </div>
+                       
+                        </a>
+                        </li>
+        {{/each}}
+     </div>
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+          $.getJSON('https://v2-api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/stega/sheet1', function (data) {
+              var template = Handlebars.compile($('#item-template2').html())
+              $('#foodsaved').html(template(data.sheet1))
+          })
+      })
+  </script>
+
+  <script id="item-template2" type="text/x-handlebars-template">
+      <div class="food-item">
+           {{#each this}}
+           <li class="">
+          <a  href="#popup" onclick="document.getElementById('icon').src='/Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';document.getElementById('extlink').href='{{link}}';var currentItem = 'MS{{id}}';console.log(currentItem)">
+           <div class="food-item ">
+               <img loading = "lazy" src="{{imagelink}}"  >
+               <div class="food-text-container">
+               <img loading = "lazy" src="/Assets/{{service}}.svg">
+                   <h3>{{name}}</h3>
+                   <h4><span>${{deliveryPrice}}</span></h4>
+               <p style="display: none;">{{category}}</p>
+               </div>
+                   </div>
+                 
+                  </a>
+                  </li>
+  {{/each}}
+</div>
+</script>
+    <script >
+
+        if ("serviceWorker" in navigator) {
+          if (navigator.serviceWorker.controller) {
+            console.log("active service worker found, no need to register");
+          } else {
+            navigator.serviceWorker
+              .register("pwabuilder-sw.js", {
+                scope: "/index.html"
+              })
+              .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+              });
+          }
+        }
+        
+        </script>
+    </head>
+<body>
+
+    <header id="header">
+  <div class="location-wrapper">
+    <div class="location-indicator">
+      <i class="material-icons">code</i>
+      <h5  id="location-indicator">Development Build v1.2</h5>
+  </div>
+  </div>
+      
+        <div class="logo-container">
+            <img id="logo" src="/public/Branding/foodscout logo.svg">
+        </div>
+      <form>
+          <ul class="nav-menu">
+           <div class="nav-item" >
+            <input id="menu1" type="radio" name="bottom-nav" checked>
+            <label for="menu1"><p>Your Feed</p></label>
+           </div>
+      
+           <div class="nav-item">
+            <input id="menu2" type="radio" name="bottom-nav" >
+            <label for="menu2"><p>Free Delivery</p></label>
+           </div>
+        <div class="nav-item">
+          <input id="menu3" type="radio" name="bottom-nav" >
+          <label for="menu3"><p>Categories</p></label>
+        </div>
+      
+          </ul>
+        </form>
+        <div class="search-icon-nav">
+          <a href="#search-icon">
+
+          </a>
+          <i onclick="search()"
+                        class="material-icons search-icon">search</i>
+        </div>
+        <form action="#items" id="search-form">
+        <div class="search-wrapper" id="searchwrap" onclick="scrollWin()">
+            <div id="searchinput" class="search-input-container" id="search-container"> <input autocomplete="off" class="search-input"
+                    type="search" id="mySearch" onkeyup="myFunction()" placeholder="Search and Eat..."
+                    title="Click To Search For Food">
+            </div>
+
+        </div>
+    </form>
+    <script>
+      function scrollWin() {
+  window.scrollTo(0, 187);
+}
+    </script>
+   
+    </header>
+ 
+    <script>
+        function myFunction() {
+            var e, s, t;
+            for (e = document.getElementById("mySearch").value.toUpperCase(), s = document.getElementById(
+                    "myMenu").getElementsByTagName("li"), t = 0; t < s.length; t++) - 1 < s[t]
+                .getElementsByTagName("a")[0].innerHTML.toUpperCase().indexOf(e) ? s[t].style.display =
+                "block" : s[t].style.display = "none"
+        }
+    </script>
+    <script>
+        $('.search-input').keyup(function (e) {
+            if (e.keyCode === 13) {
+                document.getElementsByClassName("result-list")[0].style.display = "block";
+            }
+        });
+    </script>
+    <script>
+        function search() {
+            document.getElementsByClassName("result-list")[0].style.display = "block";
+          
+            document.getElementById("searchwrap").style.display = "block";
+            document.getElementById("mySearch").focus();
+        }
+
+        function closeSearch() {
+            document.getElementById("searchwrap").style.display = "none";
+
+        }
+    </script>
+
+<!------------------------Food Container-------------------->
+
+<section class="food-container">
+    <ul id="myMenu" class="result-list">
+    <div id="food">
+        <div class="loader-container"> <img class="loader" src="https://i.pinimg.com/originals/c7/2d/11/c72d11a3d65ca0231b338984bc59e89d.gif"></div>
+   
+    </div> 
+</ul>
+</section>
+
+
+
+
+<!-----------------------------Saved-------
+<div class="saved-container">
+  <h1>Saved</h1>
+<div id="foodsaved"></div>
+</div>
+--------------------->
+<!-------------------------Pop In Menu--------------------------------->
+
+<div class="popin-container vivify fadeIn duration-200" id="popup"  >
+  <div  class="close-btn"><button onclick="window.history.back();"></button></div>
+<div class="popin vivify fadeInBottom" >
+  <div class="pop-image">
+    <img id="imagefood" src="">
+  </div>
+  <div class="sub-pop">
+  <div class="pop-logo-container">
+    <div class="pop-logo">
+      <img id="icon" src="assets/Uber Eats.svg">
+    </div>
+   
+  <p>Delivery <span id="deliveryPrice">$4.99</span></p>
+  </div>
+  <div class="navigation-buttons">
+    <a  href="#" onclick="console.log(currentItem)"><button>Save For Later</button></a>
+    <a id="extlink" href="" class="color" target="_blank"><button >Start Order</button></a>
+  </div>
+  <p>Delivery fee may be subject to change by delivery service</p>
+</div>
+</div>
+</div>
+
+<!---------------------------------Sign Up Pop------------------------------->
+
+<div class="popin-container vivify fadeIn duration-200" id="popupSignup"  >
+  <div  class="close-btn" ><button style="height: 200px;" onclick="window.history.back();"></button></div>
+<div class="popin vivify fadeInBottom popupSignup" >
+
+  <form>
+  <div class="sub-pop">
+
+    <div class="head-text-container">
+      <h2>Welcome</h2>
+    </div>
+
+    <div class="form-styling">
+   
+      <div class="halfed-input">
+      <label>First Name</label>
+      <br>
+      <input class="input-styling" type="text" id="signup-first-name" required>
+      </div>
+
+     
+      <div class="halfed-input">
+        <label>Last Name</label>
+        <br>
+        <input class="input-styling" type="text" id="signup-last-name" required>
+      </div>
+     
+      <label>E-Mail</label>
+      <br>
+      <input class="input-styling" type="email" id="signup-email" required>
+     
+      <label>Your City</label>
+      <select class="input-styling" required>
+        <option disabled>Supported Cities</option>
+        <optgroup label="Mississippi">
+          <option value="volvo">Gulfport</option>
+          <option value="volvo">Long Beach</option>
+        </optgroup>
+       
+       
+      </select>
+      <br>
+
+      <label>Password</label>
+      <br>
+      <input class="input-styling" type="password" id="signup-password" required>
+    </div>
+  <div class="navigation-buttons">
+  
+    <a id="extlink" href="" class="color" target="_blank"><button >Sign Up</button></a>
+  </div>
+  <p>By signing up you agree to our <a href="">Privacy Policy</a>.</p>
+</div>
+</form>
+
+
+</div>
+</div>
+
+      <!----------------Bottom-Navigation-------------->
+      <div class="bottom-navigation">
+        <div class="bottom-nav-wrapper">
+            <div class="bottom-nav-button start " onclick="target();document.getElementById('inject-frame').src='mealmenu.html#lunch';">
+                <input  id="nav-btn1" type="radio" name="bottom-nav">
+                <label for="nav-btn1" ><img  src="/Assets/Saved Filled.svg"></label>
+            </div>
+            <a href="#">
+                <div class="bottom-nav-button"
+              >
+           
+                <input id="nav-btn2" type="radio" name="bottom-nav" checked>
+               
+                <label for="nav-btn2"><img src="/Assets/Home Filled.svg"></label>
+           
+            </div>
+          </a>
+            
+
+            <div class="bottom-nav-button" onclick="view()">
+
+                <input id="nav-btn3" type="radio" name="bottom-nav" >
+                <label for="nav-btn3"><img src="/Assets/Profile Filled.svg"></label>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

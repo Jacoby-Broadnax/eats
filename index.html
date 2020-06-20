@@ -93,8 +93,11 @@
 </div>
 </script>
 
+
+
+<!------------------------------Service Worker Disabled---------------
     <script >
-   if ("serviceWorker" in navigator) {
+ if ("serviceWorker" in navigator) {
                   if (navigator.serviceWorker.controller) {
                     console.log("[PWA Builder] active service worker found, no need to register");
                   } else {
@@ -110,6 +113,7 @@
                 }
                 
 </script>
+------------------------->
     </head>
 <body>
 
@@ -226,7 +230,7 @@
   </div>
   <div class="profile-container">
     <div class="profile-img">
-      <img src="Icons/user-1.svg">
+      <img src="Icons/user.svg">
     </div>
     <div class="profile-text">
       <h2><div id="firstName">Null</div> <div id="lastName">Null</div></h2>
@@ -325,11 +329,12 @@
 </div>
 </div>
 </div>
-
+</div>
 <!---------------------------------Account--------------------->
 
 <div class="popin-container vivify fadeIn duration-200" id="account"  >
   <div  class="close-btn"><button onclick="window.history.back();"></button></div>
+  <div class="pop-wrapper">
 <div class="popin vivify fadeInBottom" >
   
   <div class="sub-pop">
@@ -346,7 +351,7 @@
 </div>
 </div>
 </div>
-
+</div>
 
 
 <!---------------------------------Sign Up Pop------------------------------->
@@ -437,7 +442,7 @@
           </a>
             
           
-            <div class="bottom-nav-button" onclick="self.location.href = statusLog;document.querySelector('meta[name=theme-color]').setAttribute('content', '#CCE8EE');">
+            <div class="bottom-nav-button" onclick="self.location.href = '#profile';document.querySelector('meta[name=theme-color]').setAttribute('content', '#CCE8EE');">
                 <input id="nav-btn3" type="radio" name="bottom-nav" >
                 <label for="nav-btn3"><img src="Assets/Profile Filled.svg"></label>
             </div>

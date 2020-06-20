@@ -1,6 +1,6 @@
-body{font-family: roboto,sans-serif; margin: 0px; padding: 0px;}
-html {scroll-behavior: smooth;}
-header {position: fixed;top: 0px; width: 100%;;background-color: white;box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);;}
+body{font-family: roboto,sans-serif; margin: 0px; padding: 0px;scroll-behavior:auto;}
+
+header {position: fixed;top: 0px; width: 100%;;background-color: white;box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);z-index: 1000;background-color:white;left: 0px;}
 
 a {text-decoration: none;}
 
@@ -24,7 +24,7 @@ header > img {filter: brightness(0.60);position: absolute;top: 0px; left: 0px;z-
 
 .location-indicator > h5 {float: left;margin-top: -1px;color: white;font-weight: 500;margin-bottom: 5px;}
 
-.location-wrapper {background-color: black;}
+.location-wrapper {background-color: black;display: none;}
 
 .logo-container {margin-left:7px;margin-top:10px}
 
@@ -32,12 +32,16 @@ li {text-decoration: none;;}
 
 #logo.er {display: none;}
 
+.large {font-size: 20px;line-height: 30px;}
+
+
 /*-----------------------------------------Pop In-----------------------------------*/
 
-.popin-container{position: fixed; top: 0px; width: 100%; height: 100vh;z-index: 550;background-color: rgba(0, 0, 0, 0.507);animation-duration: 20ms;}
-.popin {position: fixed;bottom: 0px; background-color: white;width: 100%;animation-duration: 300ms !important;opacity:1 !important;}
+.popin-container{position: fixed; top: 0px; width: 100%; height: 100vh;z-index: 2001;background-color: rgba(0, 0, 0, 0.507);animation-duration: 20ms;}
+.popin {position: fixed;bottom: 0px; background-color: white;width: 100%;animation-duration: 300ms !important;opacity:1 !important;z-index: 1001;border-radius: 10px 10px 0px 0px;}
 .sub-pop {vertical-align: top;margin: auto; width: 93%;}
-.close-btn > button {position: fixed; width: 100%; left: 0px; top: 0px; height: 70vh;;z-index: 600;border: none; background-color: transparent;}
+.close-btn > button {position: fixed; width: 100%; left: 0px; top: 0px; height: 100vh;;z-index: 600;border: none; background-color: transparent;}
+.close-btn > button:focus {outline: none;}
 .pop-logo-container > p {font-size: 14px; font-weight: normal;margin-top: 0px; text-align: center;padding-top: 3px;
   padding-left: 3px;}
 .pop-logo-container {display: flex;
@@ -46,16 +50,22 @@ li {text-decoration: none;;}
 
 
 .pop-logo-container > p > span {font-weight: bold;}
-.navigation-buttons > a > button {width: 100%;height: 40px;background-color:white;border: solid 1px lightgray;border-radius: 5px;border: none;}
-.color > button {background-color: black !important;color: white;margin-top: 10px;border: none;}
+.navigation-buttons > a > button {width: 100%;height: 51px;background-color:#e5e5ea50;border: none;border-radius: 12px;text-align: left;padding-left: 5%;}
+
+.navigation-buttons > a >  img {width:20px;float: right;margin-top: -35px;position: relative;z-index: 15;margin-right: 15px;}
+.color > button {margin-top: 10px;border: none;}
 .sub-pop > p {font-size: 12px;color: rgb(88, 88, 88);text-align: center;margin-bottom: 20px;}
-.navigation-buttons {margin:auto; width: 100%;}
+.navigation-buttons {margin:auto; width: 100%;max-width: 340px;}
 .pop-image > img {width: 100%;height: 250px;object-fit: cover;}
 #popup {display: none;}
 #popup:target {display: block;}
-
-
-
+#popupSignup {display: none;}
+#popupSignup:target {display: block;}
+#popupLogin {display: none;}
+#popupLogin:target {display: block;}
+#account {display: none;}
+#profile {display: none;}
+#profile:target {display: block;}
 .head-text-container > h2  {font-weight: 500; width: 100%; text-align: center;font-size: 30px;margin-top: 15px;margin-bottom: 15px;}
 
 .input-styling {width: 96%;padding: 0px;height: 36px;padding-left: 10px;margin-top: 10px;margin-bottom: 10px;border-radius: 4px;border: solid 1px lightgray;}
@@ -64,9 +74,9 @@ li {text-decoration: none;;}
 
 .halfed-input > input {margin-top: 15px;border-radius: 4px;}
 
-.halfed-input {display: inline-block;width: 46.4%;float: left;}
+.halfed-input {display: inline-block;width: 46.4%;}
 
-.halfed-input:last-of-type {margin-left: 5%;}
+.halfed-input:last-of-type {margin-left: 4%;}
 
 .form-styling > h3 {font-weight: 500;}
 
@@ -74,25 +84,53 @@ li {text-decoration: none;;}
   .close-btn {display: none;}
   .popupSignup{position: fixed;top: 0px;left: 0px;overflow: scroll;height: 100vh;}
 }
+
+/*----------------------------------------Pages---------------------------------*/
+
+.page-over{position: fixed;top: 0px;left: 0px;height: 100vh;z-index: 1004;background-color: white;width: 100%;}
+
+/*---------------------------------------Profile----------------------------------*/
+
+.profile-container {margin: auto;width: 200px;margin-top: -60px;position: relative;z-index:150;}
+
+.profile-img{display: flex;
+  flex-direction: row;
+  justify-content: center;}
+
+.profile-img > img {width:120px}
+
+.profile-text > h2 {text-align: center;margin: 0px;margin-top: 10px;}
+
+.profile-text > h2 > div {display: inline-block;}
+
+.profile-text > p {text-align: center;padding-top: 0px;margin-top: 0px;}
+
+.small-btn {display: flex;
+  flex-direction: row;
+  justify-content: center;}
+
+  .color-block {width: 100%;height: 120px;background-color:#A3D5E0 ;opacity: 0.55;}
 /*-----------------------------------------Search------------------------------------*/
 
 #search-form {}
 
-.search-input-container {width:280px ;padding-bottom: 0px;position: sticky;top: 0px;left: 0px;}
+.search-input-container {width:93% ;padding-bottom: 0px;margin-top: 38px;}
 
 
 
-.search-icon-nav {position: fixed; right:0px;top:40px;right: 15px;z-index: 150;}
+.search-icon-nav {position: fixed; right:0px;top:10px;right: 15px;z-index: 150;}
 
-.search-input-container > input {width: 100%;padding-left: 20px;height: 42px;border-radius: 50px;border: solid 1px transparent;transition: 0.2s ease;background-color: rgb(236, 236, 236);}
+.search-icon {padding: 10px;}
+
+.search-input-container > input {width: 100%;padding-left: 5%;height: 36px;border-radius: 10px;border: solid 1px transparent;transition: 0.2s ease;background-color: #e1e1e375;-webkit-border-radius:10px;-webkit-appearance: none;}
 
 .search-input-container > i {float: right; background-color: transparent;padding:8px;margin-top: -55px;z-index: 50;position: relative;padding-right: 10px;color: black;}
 
 .search-input-container > input:focus {outline: none;}
 
-.search-wrapper {position: fixed;width: 100%;top: 32px;left: 15px;background-color: white;height: 50px;}
+.search-wrapper {position: fixed;width: 100%;top: 10px;left: 13px;background-color: transparent;height: 50px;}
 
-#searchwrap {display: none;}
+
 
 #searchinput.ol {margin-bottom: 0px;padding-bottom: 30px;;-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.22);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.22);
@@ -102,11 +140,16 @@ li {text-decoration: none;;}
 
 /*-----------------------------------------Nav Menu----------------------------------------------*/
 
-.nav-menu {padding-top: 16px;margin: 0px;margin-left: -34px;}
+.nav-menu {padding-top: 55px;margin: 0px;margin-left: -34px;overflow: scroll;white-space: nowrap;}
 
-.nav-menu > li {display: inline-block;margin-left: 10px;}
+.nav-menu > li {display: inline-block;margin-right: 10px;}
+
+.nav-menu:first-child {margin-left: -24px;}
 
 .nav-menu > li > a {color: black;}
+
+.nav-menu > li:last-of-type {margin-right: 20px;}
+
 
 .nav-item > input:checked+label>p {border-bottom: 2px solid black;color: black;font-weight: 500;}
 
@@ -115,12 +158,14 @@ li {text-decoration: none;;}
 .nav-item > label > p {padding-bottom: 15px;margin-top: 0px;margin-bottom: 0px;color: rgb(92, 92, 92);transition: 0.2s ease;font-size: 14px;}
 
 .nav-item {display: inline-block;margin-left: 12px;}
+
+.nav-item:last-of-type {margin-right: 20px;}
 /*------------------------------------------Food Item--------------------------------*/
 #food {padding-bottom: 50px;margin-bottom: 500px;}
 
 
 
-.result-list {margin: 0px;padding: 0px;padding-bottom: 50px;margin-top: 72px;background-color: white; padding-top: 50px;}
+.result-list {margin: 0px;padding: 0px;padding-bottom: 50px;margin-top:109px;background-color: white; padding-top: 25px;position: relative; z-index:150}
 
 li {margin: 0px;padding: 0px;list-style-type: none;}
 
@@ -168,7 +213,7 @@ label>img:active {}
 
 .bottom-nav-wrapper {margin: auto;width: 330px  ;}
 
-.bottom-navigation {position: fixed; bottom: 0px; left: 0px; width: 100%;z-index: 200;border-top: solid 1px lightgray;background-color: white;height: 55px;}
+.bottom-navigation {  position: fixed; bottom: 0px; left: 0px; width: 100%;z-index: 1010;border-top: solid 1px lightgray;background-color: white;height: 55px;background-color: rgba(255, 255, 255, 0.863);backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);}
 
 @media only screen and (max-width: 359px) {
     label > img {width: 65px;;}
@@ -187,3 +232,20 @@ label>img:active {}
 .saved-container {position: fixed; z-index: 500;background-color: white; top: 0px;width: 100%;}
 
 #foodsaved{overflow: scroll;white-space: nowrap;height: 100vh;}
+
+@media only screen and (min-width: 500px) {
+  #food {margin-top: -94px;}
+  .food-item {margin:0;height: 198px;width: 48%;float: left;padding-top: 90px;padding-left: 1%;padding-right:1%;}
+  .food-item > img {height: 198px;width: 100%;border-radius: 10px;}
+ .food-text-container {float: none;}
+ .food-wrapper {padding: 10px;}
+ .pop-image > img {height: 500px;}
+ .bottom-navigation {background-color: rgba(255, 255, 255, 0.863);backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);}
+ header {background-color: rgba(255, 255, 255, 0.863);backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);}
+ .pop-wrapper {position: fixed;width: 100%;bottom: 0px;top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);height: 741px;}
+ .popin {width: 100%;position: static;margin:auto;width: 450px;border-radius: 10px;}
+ .pop-image > img {border-radius: 10px 10px 0px 0px;}
+ .sub-pop {padding-bottom: 10px;}
+}

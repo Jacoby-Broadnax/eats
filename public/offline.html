@@ -2,37 +2,19 @@
 <html lang="en">
     <head><title>Food Scout | Find Food On Uber Eats, Door Dash, and More</title>
       <link rel="stylesheet" href="vivify.min.css">
-  
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <link href="splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-<link href="splashscreens/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-<link href="splashscreens/iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="splashscreens/iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-<link href="splashscreens/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="splashscreens/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="splashscreens/ipadpro3_splash.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black">
-      <meta name="apple-mobile-web-app-title" content="Food Scout">
-      <link rel="apple-touch-icon" href="512.png">
-<link rel="apple-touch-icon" sizes="152x152" href="Branding/152.PNG">
-<link rel="apple-touch-icon" sizes="180x180" href="Branding/180.png">
-<link rel="apple-touch-icon" sizes="167x167" href="Branding/167.png">
         <link rel="stylesheet" href="main.css">
         <meta name="language" content="English">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
         <link rel="manifest" href="manifest.json">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
-        <meta name="theme-color" content="#ffffff"/>
+        <meta name="theme-color" content="#000000"/>
         <meta name="description" content="
         Food Scout one place for all your food. Search DoorDash, Uber Eats, and more for the best delivery prices. ">
-        <link rel="shortcut icon" href="branding/logo transparent edge.png">
+        
         <link href="https://cdn.rawgit.com/mladenplavsic/css-ripple-effect/35c35541/dist/ripple.min.css" rel="stylesheet"/>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
                 $.getJSON('https://v2-api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/stega/sheet1', function (data) {
@@ -43,7 +25,7 @@
         </script>
     
         <script id="item-template" type="text/x-handlebars-template">
-            <div class="food-wrapper">
+            <div class="food-item">
                  {{#each this}}
                  <li>
                 <a href="#popup" onclick="document.getElementById('icon').src='Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';document.getElementById('extlink').href='{{link}}';closeSearch();">
@@ -73,12 +55,12 @@
   </script>
 
   <script id="item-template2" type="text/x-handlebars-template">
-      <div class="food-item" onswiperight="alert('hello world')">
+      <div class="food-item">
            {{#each this}}
            <li class="">
           <a  href="#popup" onclick="document.getElementById('icon').src='/Assets/{{service}}.svg';document.getElementById('imagefood').src='{{imagelink}}';document.getElementById('extlink').href='{{link}}';var currentItem = 'MS{{id}}';console.log(currentItem)">
-           <div class="food-item " onswiperight="alert('hello world')">
-               <img class="vivify fadeIn" loading = "lazy" src="{{imagelink}}"  >
+           <div class="food-item ">
+               <img loading = "lazy" src="{{imagelink}}"  >
                <div class="food-text-container">
                <img loading = "lazy" src="/Assets/{{service}}.svg">
                    <h3>{{name}}</h3>
@@ -94,40 +76,39 @@
 </script>
 
     <script >
-   if ("serviceWorker" in navigator) {
-                  if (navigator.serviceWorker.controller) {
-                    console.log("[PWA Builder] active service worker found, no need to register");
-                  } else {
-                    // Register the service worker
-                    navigator.serviceWorker
-                      .register("pwabuilder-sw.js", {
-                        scope: "index.html"
-                      })
-                      .then(function (reg) {
-                        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-                      });
-                  }
-                }
-                
-</script>
+
+        if ("serviceWorker" in navigator) {
+          if (navigator.serviceWorker.controller) {
+            console.log("active service worker found, no need to register");
+          } else {
+            navigator.serviceWorker
+              .register("pwabuilder-sw.js", {
+                scope: "/index.html"
+              })
+              .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+              });
+          }
+        }
+        
+        </script>
+
     </head>
 <body>
 
     <header id="header">
   <div class="location-wrapper">
     <div class="location-indicator">
-      <i class="material-icons">location_on</i>
-      <h5  id="location-indicator">Food Scout v1.2</h5>
+      <i class="material-icons">code</i>
+      <h5  id="location-indicator">Development Build v1.2</h5>
   </div>
   </div>
       
         <div class="logo-container">
             <img id="logo" src="Branding/foodscout logo.svg">
         </div>
-      
       <form action="#" method="GET">
           <ul class="nav-menu">
-           
            <div class="nav-item" onclick="document.getElementById('mySearch').value='';myFunction();" >
             <input id="menu1" type="radio" name="bottom-nav" checked>
             <label for="menu1"><p>Gulfport, MS</p></label>
@@ -169,7 +150,8 @@
           <a href="#search-icon">
 
           </a>
-        
+          <i onclick="search(),self.location.href = '#';document.getElementById('mySearch').value='';myFunction(); "
+                        class="material-icons search-icon">search</i>
         </div>
         <form action="#items" id="search-form">
         <div class="search-wrapper" id="searchwrap" onclick="scrollWin()">
@@ -218,32 +200,11 @@
         }
     </script>
 
-   <!-----------------------------------Profile-------------------------------->
-
-<div id="profile" class="page-over">
-  <div class="color-block">
-
-  </div>
-  <div class="profile-container">
-    <div class="profile-img">
-      <img src="Icons/user-1.svg">
-    </div>
-    <div class="profile-text">
-      <h2><div id="firstName">Null</div> <div id="lastName">Null</div></h2>
-      <p id="email">Null@gmail.com</p>
-      <div class="small-btn">
-        <button id="logout">Logout</button>
-      </div>
-    </div>
-  </div>
-  
-  </div>
-
 <!------------------------Food Container-------------------->
 
 
     <ul id="myMenu" class="result-list ">
-    <div id="food" onswiperight="alert('hello world')">
+    <div id="food" >
         <div class="loader-container"> <img class="loader" src="https://i.pinimg.com/originals/c7/2d/11/c72d11a3d65ca0231b338984bc59e89d.gif"></div>
    
     </div> 
@@ -263,7 +224,6 @@
 
 <div class="popin-container vivify fadeIn duration-200" id="popup"  >
   <div  class="close-btn"><button onclick="window.history.back();"></button></div>
-  <div class="pop-wrapper">
 <div class="popin vivify fadeInBottom" >
   <div class="pop-image">
     <img id="imagefood" src="">
@@ -277,86 +237,21 @@
   <p>Delivery <span id="deliveryPrice">$4.99</span></p>
   </div>
   <div class="navigation-buttons">
-    <a  href="#" onclick="console.log(currentItem)"><button>Save For Later</button><img src="https://img.icons8.com/ios/100/000000/add.png"/></a>
-    <a id="extlink" href="" class="color" target="_blank"><button >Start Order</button><img src="https://img.icons8.com/ios/100/000000/external-link.png"/></a>
+    <a  href="#" onclick="console.log(currentItem)"><button>Save For Later</button></a>
+    <a id="extlink" href="" class="color" target="_blank"><button >Start Order</button></a>
   </div>
   <p>Delivery fee may be subject to change by delivery service</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-
-<!---------------------------------Log In Pop------------------------------->
-
-<div class="popin-container vivify fadeIn duration-200" id="popupLogin"  >
-  <div  class="close-btn" ><button style="height: 325px;" onclick="window.history.back();"></button></div>
-  <div class="pop-wrapper">
-<div class="popin vivify fadeInBottom popupSignup" >
-
-  <form id="login-form">
-  <div class="sub-pop">
-
-    <div class="head-text-container">
-      <h2>Login</h2>
-    </div>
-
-    <div class="form-styling">
-   
-    
-     
-      <label>E-Mail</label>
-      <br>
-      <input class="input-styling" type="email" id="login-email" required>
-     
-    
-      <label>Password</label>
-      <br>
-      <input class="input-styling" type="password" id="login-password" required>
-    </div>
-  <div class="navigation-buttons">
-  
-    <a id="extlink" href="" class="color" target="_blank"><button >Login</button></a>
-  </div>
-  <p>By logging in you agree to our <a href="">Privacy Policy</a>.</p>
-</div>
-</form>
-
-</div>
-</div>
-</div>
-
-<!---------------------------------Account--------------------->
-
-<div class="popin-container vivify fadeIn duration-200" id="account"  >
-  <div  class="close-btn"><button onclick="window.history.back();"></button></div>
-<div class="popin vivify fadeInBottom" >
-  
-  <div class="sub-pop">
-  <div class="pop-logo-container">
-
-   
-  <p><span id="deliveryPrice" class="large">Welcome To Food Scout</span><br> Find food from Uber Eats, Door Dash, and more signup or login to get started.</p>
-  </div>
-  <div class="navigation-buttons">
-    <a  href="#popupLogin" onclick="document.getElementById('account').style.display ='none';"><button>Login</button></a>
-    <a id="extlink" onclick="document.getElementById('account').style.display ='none';" href="#popupSignup" class="color" ><button >Signup</button></a>
-  </div>
-  <p>Privacy Policy</p>
-</div>
-</div>
-</div>
-
-
 
 <!---------------------------------Sign Up Pop------------------------------->
 
 <div class="popin-container vivify fadeIn duration-200" id="popupSignup"  >
   <div  class="close-btn" ><button style="height: 325px;" onclick="window.history.back();"></button></div>
-  <div class="pop-wrapper">
 <div class="popin vivify fadeInBottom popupSignup" >
 
-  <form id="signup-form">
+  <form>
   <div class="sub-pop">
 
     <div class="head-text-container">
@@ -377,34 +272,26 @@
         <br>
         <input class="input-styling" type="text" id="signup-last-name" required>
       </div>
-     <br>
+     
       <label>E-Mail</label>
       <br>
       <input class="input-styling" type="email" id="signup-email" required>
      
-  
       <label>Your City</label>
-      <select class="input-styling" id="signup-city" required>
+      <select class="input-styling" required>
         <option disabled>Supported Cities</option>
         <optgroup label="Mississippi">
-          <option value="Gulfport">Gulfport</option>
-          <option value="Long Beach">Long Beach</option>
+          <option value="volvo">Gulfport</option>
+          <option value="volvo">Long Beach</option>
         </optgroup>
        
        
       </select>
-   
-
-       
-     
-
       <br>
 
       <label>Password</label>
       <br>
       <input class="input-styling" type="password" id="signup-password" required>
-
-
     </div>
   <div class="navigation-buttons">
   
@@ -414,7 +301,7 @@
 </div>
 </form>
 
-</div>
+
 </div>
 </div>
 
@@ -426,7 +313,7 @@
                 <label for="nav-btn1" ><img  src="Assets/Saved Filled.svg"></label>
             </div>
             <a href="#">
-                <div onclick="self.location.href = '#';document.querySelector('meta[name=theme-color]').setAttribute('content', '#ffffff');" class="bottom-nav-button"
+                <div onclick="self.location.href = '#';" class="bottom-nav-button"
               >
            
                 <input id="nav-btn2" type="radio" name="bottom-nav" checked>
@@ -437,47 +324,11 @@
           </a>
             
           
-            <div class="bottom-nav-button" onclick="self.location.href = statusLog;document.querySelector('meta[name=theme-color]').setAttribute('content', '#CCE8EE');">
+            <div class="bottom-nav-button" onclick="self.location.href = '#' + 'popupSignup';">
                 <input id="nav-btn3" type="radio" name="bottom-nav" >
                 <label for="nav-btn3"><img src="Assets/Profile Filled.svg"></label>
             </div>
         </div>
     </div>
- 
-    <!-----------------Fire Base-------------------------->
-
-    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-storage.js"></script>
-  <script>
-   // Web App Configuration
-   var firebaseConfig = {
-    apiKey: "AIzaSyBwHPwOVjpXfpmir_0MTHATvBi-rFiSI4E",
-    authDomain: "food-scout-faf65.firebaseapp.com",
-    databaseURL: "https://food-scout-faf65.firebaseio.com",
-    projectId: "food-scout-faf65",
-    storageBucket: "food-scout-faf65.appspot.com",
-    messagingSenderId: "596600354059",
-    appId: "1:596600354059:web:33d9a49b440760c38d5e0e",
-    measurementId: "G-YMVF5ZHYYM"
-  };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  
-  
-    // Make auth and firestore references
-  
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-  
-
-  </script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="node_modules/tocca/bind.polyfill.js"></script>
-      <script src="node_modules/tocca/Tocca.min.js"></script>
-
-    <script src="auth.js"></script>
-    <script src="index.js"></script>
 </body>
 </html>

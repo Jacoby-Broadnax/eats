@@ -111,9 +111,9 @@ li {text-decoration: none;;}
   .color-block {width: 100%;height: 120px;background-color:#A3D5E0 ;opacity: 0.55;}
 /*-----------------------------------------Search------------------------------------*/
 
-#search-form {}
+#search-form {display: none;}
 
-.search-input-container {width:93% ;padding-bottom: 0px;margin-top: 38px;}
+.search-input-container {width:93% ;padding-bottom: 0px;margin-top: 7px;}
 
 
 
@@ -121,13 +121,13 @@ li {text-decoration: none;;}
 
 .search-icon {padding: 10px;}
 
-.search-input-container > input {width: 100%;padding-left: 5%;height: 36px;border-radius: 10px;border: solid 1px transparent;transition: 0.2s ease;background-color: #e1e1e375;-webkit-border-radius:10px;-webkit-appearance: none;}
+.search-input-container > input {width: 100%;padding-left: 15px;height: 36px;border-radius: 10px;border: solid 1px transparent;transition: 0.2s ease;background-color: #f8f8f8;-webkit-border-radius:10px;-webkit-appearance: none;}
 
 .search-input-container > i {float: right; background-color: transparent;padding:8px;margin-top: -55px;z-index: 50;position: relative;padding-right: 10px;color: black;}
 
 .search-input-container > input:focus {outline: none;}
 
-.search-wrapper {position: fixed;width: 100%;top: 10px;left: 13px;background-color: transparent;height: 50px;}
+.search-wrapper {position: fixed;width: 100%;top: 6px;left: 13px;background-color: transparent;height: 50px;z-index: 100;}
 
 
 
@@ -139,7 +139,7 @@ li {text-decoration: none;;}
 
 /*-----------------------------------------Nav Menu----------------------------------------------*/
 
-.nav-menu {padding-top: 55px;margin: 0px;margin-left: -34px;overflow: scroll;white-space: nowrap;}
+.nav-menu {padding-top:15px;margin: 0px;margin-left: -34px;overflow: scroll;white-space: nowrap;}
 
 .nav-menu > li {display: inline-block;margin-right: 10px;}
 

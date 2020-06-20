@@ -173,7 +173,8 @@
           <a href="#search-icon">
 
           </a>
-        
+          <i onclick="search()"
+                        class="material-icons search-icon">search</i>
         </div>
         <form action="#items" id="search-form">
         <div class="search-wrapper" id="searchwrap" onclick="scrollWin()">
@@ -211,7 +212,7 @@
     <script>
         function search() {
             document.getElementsByClassName("result-list")[0].style.display = "block";
-          
+            document.getElementById("search-form").style.display = "block";
             document.getElementById("searchwrap").style.display = "block";
             document.getElementById("mySearch").focus();
         }

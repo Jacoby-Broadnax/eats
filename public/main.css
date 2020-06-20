@@ -50,12 +50,10 @@ li {text-decoration: none;;}
 
 
 .pop-logo-container > p > span {font-weight: bold;}
-.navigation-buttons > a > button {width: 100%;height: 51px;background-color:#e5e5ea50;border: none;border-radius: 12px;text-align: left;padding-left: 5%;}
-
-.navigation-buttons > a >  img {width:20px;float: right;margin-top: -35px;position: relative;z-index: 15;margin-right: 15px;}
-.color > button {margin-top: 10px;border: none;}
+.navigation-buttons > a > button {width: 100%;height: 40px;background-color:white;border: solid 1px lightgray;border-radius: 5px;}
+.color > button {background-color: black !important;color: white;margin-top: 10px;border: none;}
 .sub-pop > p {font-size: 12px;color: rgb(88, 88, 88);text-align: center;margin-bottom: 20px;}
-.navigation-buttons {margin:auto; width: 100%;max-width: 340px;}
+.navigation-buttons {margin:auto; width: 100%;}
 .pop-image > img {width: 100%;height: 250px;object-fit: cover;}
 #popup {display: none;}
 #popup:target {display: block;}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="138" height="29" viewBox="0 0 138 29">
+  <defs>
+    <clipPath id="clip-foodscout_logo">
+      <rect width="138" height="29"/>
+    </clipPath>
+  </defs>
+  <g id="foodscout_logo" data-name="foodscout logo" clip-path="url(#clip-foodscout_logo)">
+    <text id="Food_Scout" data-name="Food Scout" transform="translate(10 -1)" font-size="23" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="24">Food</tspan><tspan y="24" xml:space="preserve" font-family="Roboto-Regular, Roboto" font-weight="400"> Scout</tspan></text>
+  </g>
+</svg>

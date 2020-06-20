@@ -1,0 +1,42 @@
+{
+  "short_name": "Food Scout",
+  "name": "Food Scout",
+  "icons": [
+    {
+      "src": "Branding/144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "maskable"
+    },
+    {
+      "src": "Branding/192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "Branding/512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+   "name":"Search",
+   "short_name":"Search",
+   "url":"/index.html#popupSignup",
+   "icons":[
+     {
+       "src":"Assets/search.png","sizes":"192x192", "type":"image/png"
+     }
+   ]
+
+  }
+],
+  "start_url": "index.html",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "index.html",
+  "theme_color": "#ffffff"
+}

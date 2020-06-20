@@ -16,7 +16,7 @@ auth.onAuthStateChanged((user) => {
            
           });
   
-        var statusLog = "#account";
+        var statusLog = "'#account'";
      
       //Toggling Menu Items
       document.getElementById("logout").style.display =

@@ -64,6 +64,7 @@ li {text-decoration: none;;}
 #popupLogin {display: none;}
 #popupLogin:target {display: block;}
 #account {display: none;}
+#account:target {display: block;}
 #profile {display: none;}
 #profile:target {display: block;}
 .head-text-container > h2  {font-weight: 500; width: 100%; text-align: center;font-size: 30px;margin-top: 15px;margin-bottom: 15px;}

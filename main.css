@@ -1,6 +1,6 @@
 body{font-family: roboto,sans-serif; margin: 0px; padding: 0px;scroll-behavior:auto;}
 
-header {position: fixed;top: 0px; width: 100%;;background-color: white;z-index: 1000;background-color:white;left: 0px;border-bottom: solid 1px lightgray;}
+header {position: fixed;top: 0px; width: 100%;;background-color: rgba(255, 255, 255, 0.863);z-index: 1000;left: 0px;border-bottom: solid 1px lightgray;backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);}
 
 a {text-decoration: none;}
 
